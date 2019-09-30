@@ -10,17 +10,17 @@ const newAction = require('./actions/new')
 const program = new commander.Command()
 
 program
-    .version(version)
+  .version(version)
 
 program
-    .command('new')
-    .alias('n')
-    .arguments('<name>')
-    .description('Create an empty project from TheCodingMachine React-Native Boilerplate')
-    .action(newAction)
+  .command('new')
+  .alias('n')
+  .arguments('<name>')
+  .description('Create a new project from TheCodingMachine React-Native Boilerplate')
+  .action(newAction)
 
 program
-    .command('*')
-    .action(() => program.help())
+  .command('*')
+  .action(() => program.help())
 
 program.parse(process.argv)
